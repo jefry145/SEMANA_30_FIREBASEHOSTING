@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Hi!</h1>
+<div style="text-align: center;" mat-dialog-content>
+  <p>Add User!</p>
+  <form [formGroup]="formLogin">
+  <mat-form-field appearance="fill">
+    <mat-label>User name:</mat-label>
+    <input matInput formControlName="user">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Apellido:</mat-label>
+    <input matInput formControlName="apellido">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Email:</mat-label>
+    <input matInput formControlName="email">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Password:</mat-label>
+    <input matInput formControlName="password">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Website:</mat-label>
+    <input matInput formControlName="website">
+  </mat-form-field>
+
+  </form>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" >No Thanks</button>
+  <button mat-button  cdkFocusInitial [mat-dialog-close] (click)="onSubmit()" [disabled]="formLogin.invalid">Send</button>
+</div>
